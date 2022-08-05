@@ -18,5 +18,5 @@ class Formacao(models.Model):
     participantes = models.ManyToManyField(Participante, through = 'FormacaoParticipantes')
 
 class FormacaoParticipantes(models.Model):
-    formacoes = models.ForeignKey(Formacao, on_delete = models.CASCADE)
-    participantes = models.ForeignKey(Participante, on_delete = models.CASCADE)
+    formacao = models.ForeignKey('Formacao', on_delete = models.CASCADE)
+    participantes = models.ForeignKey('Participante', on_delete = models.CASCADE)
